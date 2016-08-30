@@ -29,7 +29,7 @@
 
         public const double MissionTimeLimitInSeconds = 90;
 
-        public const float SpawnMaxRadius = 330.0f;
+        public const float SpawnMaxRadius = 265.0f;
 
         public static readonly RelationshipGroup GirlsRelationshipGroup = "PIMPING_GIRL";
 
@@ -42,7 +42,7 @@
 
         public static readonly string[] SecondProstitutePickSubtitleText =
         {
-            "Good! Go an pick up another ~b~girl~s~.",
+            "Good! Go and pick up another ~b~girl~s~.",
         };
 
         public static readonly string[] ProstitutePickSubtitleText =
@@ -1046,7 +1046,7 @@
             CustomerDoesNotPay = 2,
         }
 
-        public static Vector3 GetSafeCoordForPed(Vector3 position, bool sidewalk = true, int flags = 0)
+        public static Vector3 GetSafeCoordForPed(Vector3 position, bool sidewalk = false, int flags =  1 << 4)
         {
             Vector3 p = World.GetNextPositionOnStreet(position);
             Vector3 outPos;
@@ -1197,11 +1197,14 @@
         /// </summary>
         public readonly Model PimpVehicleModel;
 
+        //public readonly float SpawnRadius;
+
         public Settings(string iniFilePath)
         {
             INIFile = new InitializationFile(iniFilePath, false);
 
             PimpVehicleModel = INIFile.ReadString("PimpingV", "Pimp's Vehicle Model", "buccaneer2");
+            //SpawnRadius = INIFile.ReadSingle("TEST", "Spawn Radius", 240.0f);
         }
     }
 
