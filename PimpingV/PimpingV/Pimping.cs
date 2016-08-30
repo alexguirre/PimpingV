@@ -952,6 +952,7 @@
             ShowTimerText = false;
             ShowPaymentWindow = false;
             ArePimpMissionsActive = false;
+            CurrentLevel = 0;
             State = PimpingState.None;
             DeleteFirstGirlBlip();
             DeleteSecondGirlBlip();
